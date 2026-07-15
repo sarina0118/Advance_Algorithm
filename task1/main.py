@@ -25,7 +25,8 @@ print("Cities after deletion:\n")
 tree.inorder()
 print("\nTotal Cities:", tree.count_nodes())
 
-tree = AVLTree()
+# AVL Tree
+avl = AVLTree()
 tree.insert(City("Kathmandu", 85.32, 27.71, 845767, 12.5))
 tree.insert(City("Pokhara", 83.99, 28.20, 402995, 30.1))
 tree.insert(City("Butwal", 83.45, 27.70, 195054, 18.2))
@@ -40,3 +41,11 @@ if result:
     print(result)
 else:
     print("City not found.")
+print("\nTotal Cities:", tree.count_nodes())
+print("Tree Height:", tree.height())
+print("\nDeleting Butwal from AVL Tree List\n")
+tree.delete("Butwal")
+print("Cities after deletion:\n")
+tree.inorder()
+print("\nTotal Cities:", tree.count_nodes())
+print("Tree Height:", tree.height())
