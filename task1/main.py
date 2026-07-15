@@ -22,3 +22,17 @@ if result:
     print(result)
 else:
     print("City not found.")
+
+print("\nTotal Cities:", tree.count_nodes())
+
+print("Tree Height:", tree.height())
+
+print("\nDeleting Butwal city from list\n")
+
+tree.delete("Butwal")
+
+print("Cities after deletion:\n")
+
+tree.inorder()
+
+print("\nTotal Cities:", tree.count_nodes())

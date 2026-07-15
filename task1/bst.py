@@ -65,3 +65,72 @@ class BinarySearchTree:
             print("-" * 40)
 
             self._inorder(node.right)
+
+    def delete(self, name):
+        self.root = self._delete(self.root, name)
+
+    def _delete(self, node, name):
+
+        if node is None:
+            return node
+
+        if name < node.city.name:
+            node.left = self._delete(node.left, name)
+
+        elif name > node.city.name:
+            node.right = self._delete(node.right, name)
+
+        else:
+            # Case 1: No child
+            if node.left is None and node.right is None:
+                return None
+
+            # Case 2: One child
+            elif node.left is None:
+                return node.right
+
+            elif node.right is None:
+                return node.left
+
+            # Case 3: Two children
+            successor = self._find_min(node.right)
+            node.city = successor.city
+            node.right = self._delete(node.right, successor.city.name)
+
+        return node
+
+    def _find_min(self, node):
+
+        current = node
+
+        while current.left is not None:
+            current = current.left
+
+        return current
+
+    def height(self):
+        return self._height(self.root)
+
+    def _height(self, node):
+
+        if node is None:
+            return 0
+
+        return 1 + max(
+            self._height(node.left),
+            self._height(node.right)
+        )
+
+    def count_nodes(self):
+        return self._count_nodes(self.root)
+
+    def _count_nodes(self, node):
+
+        if node is None:
+            return 0
+
+        return (
+            1
+            + self._count_nodes(node.left)
+            + self._count_nodes(node.right)
+        )
