@@ -1,0 +1,10 @@
+Algorithm,Input Size,Execution Time (seconds)
+Coin Change,20,6.570000550709665e-05
+Coin Change,50,0.00021689999266527593
+Coin Change,100,0.0005010000022593886
+Assign Mice to Holes,100,0.00014719998580403626
+Assign Mice to Holes,1000,0.0002572000084910542
+Assign Mice to Holes,5000,0.0014055999927222729
+Hamiltonian Cycle,4,1.2900010915473104e-05
+Hamiltonian Cycle,5,1.4999997802078724e-05
+Hamiltonian Cycle,6,8.000002708286047e-06
